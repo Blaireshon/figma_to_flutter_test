@@ -51,30 +51,30 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              //flutterView
-              FutureBuilder(
-                future: flutterView,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    // While waiting for data, return a CircularProgressIndicator or a placeholder
-                    return CircularProgressIndicator();
-                  } else if (snapshot.hasError) {
-                    // If there's an error, display an error message
-                    return Text('Error: ${snapshot.error}');
-                  } else {
-                    // If data is successfully fetched, return the data widget
-                    //return snapshot.data ?? Container(); // Make sure to handle null case
-                    return  snapshot.data ?? Container();
-                  }
-                },
-              ),
-            ],
-          ),
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            //flutterView
+            FutureBuilder(
+              future: flutterView,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  // While waiting for data, return a CircularProgressIndicator or a placeholder
+                  return CircularProgressIndicator();
+                } else if (snapshot.hasError) {
+                  // If there's an error, display an error message
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  // If data is successfully fetched, return the data widget
+                  //return snapshot.data ?? Container(); // Make sure to handle null case
+                  return  snapshot.data ?? Container();
+                }
+              },
+            ),
+          ],
         ),
+      ),
 
     );
   }
