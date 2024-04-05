@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print('hi');
     final Future<Widget> flutterView = FigmaToFlutter.getData(fileKey: 'JsmdZX9BH4IxJ0YZqnww2q',id: '1-2');
 
     return Scaffold(
@@ -55,7 +56,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //flutterView
             FutureBuilder(
               future: flutterView,
               builder: (context, snapshot) {
