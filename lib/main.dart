@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   // While waiting for data, return a CircularProgressIndicator or a placeholder
-                  return CircularProgressIndicator();
+                  return const CircularProgressIndicator();
                 } else if (snapshot.hasError) {
                   // If there's an error, display an error message
                   return Text('Error: ${snapshot.error}');
